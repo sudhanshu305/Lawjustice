@@ -1,0 +1,78 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input";
+
+export default function LawJusticePortal() {
+  return (
+    <div className="p-6 space-y-6">
+      <h1 className="text-4xl font-bold text-center">Law & Justice Portal</h1>
+
+      <Tabs defaultValue="dashboard" className="w-full">
+        <TabsList className="grid w-full grid-cols-4">
+          <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
+          <TabsTrigger value="stats">Crime Stats</TabsTrigger>
+          <TabsTrigger value="laws">Indian Laws</TabsTrigger>
+          <TabsTrigger value="login">Login</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="dashboard">
+          <Card>
+            <CardContent className="p-4 space-y-4">
+              <h2 className="text-2xl font-semibold">Dashboard Overview</h2>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Total Cases Pending: 1,25,000+</li>
+                <li>Judges in India: 21,000+</li>
+                <li>Crime Rate (2024): 375 per lakh</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="stats">
+          <Card>
+            <CardContent className="p-4 space-y-4">
+              <h2 className="text-2xl font-semibold">Crime Statistics</h2>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Rape Cases: 30,000+</li>
+                <li>Theft: 50,000+</li>
+                <li>Murder: 10,000+</li>
+                <li>Juvenile Involvement: Age 12-18: 15%</li>
+                <li>Conviction Rate (Rape): 25%</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="laws">
+          <Card>
+            <CardContent className="p-4 space-y-4">
+              <h2 className="text-2xl font-semibold">Important Indian Laws</h2>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>IPC (Indian Penal Code)</li>
+                <li>CRPC (Criminal Procedure Code)</li>
+                <li>Evidence Act</li>
+                <li>Constitution of India</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="login">
+          <Card>
+            <CardContent className="p-4 space-y-6">
+              <h2 className="text-2xl font-semibold">Login Portal</h2>
+              <div className="space-y-4">
+                <Input type="email" placeholder="Email" />
+                <Input type="password" placeholder="Password" />
+                <Button className="w-full">Login as Judge</Button>
+                <Button className="w-full" variant="outline">Login as Client</Button>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+}
