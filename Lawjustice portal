@@ -10,11 +10,12 @@ export default function LawJusticePortal() {
       <h1 className="text-4xl font-bold text-center">Law & Justice Portal</h1>
 
       <Tabs defaultValue="dashboard" className="w-full">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
           <TabsTrigger value="stats">Crime Stats</TabsTrigger>
           <TabsTrigger value="laws">Indian Laws</TabsTrigger>
           <TabsTrigger value="login">Login</TabsTrigger>
+          <TabsTrigger value="video">Video Conf.</TabsTrigger>
         </TabsList>
 
         <TabsContent value="dashboard">
@@ -50,9 +51,9 @@ export default function LawJusticePortal() {
             <CardContent className="p-4 space-y-4">
               <h2 className="text-2xl font-semibold">Important Indian Laws</h2>
               <ul className="list-disc pl-5 space-y-1">
-                <li>IPC (Indian Penal Code)</li>
-                <li>CRPC (Criminal Procedure Code)</li>
-                <li>Evidence Act</li>
+                <li>BNS (Bharatiya Nyaya Sanhita)</li>
+                <li>BNSS (Bharatiya Nagarik Suraksha Sanhita)</li>
+                <li>BSA (Bharatiya Sakshya Adhiniyam)</li>
                 <li>Constitution of India</li>
               </ul>
             </CardContent>
@@ -69,6 +70,20 @@ export default function LawJusticePortal() {
                 <Button className="w-full">Login as Judge</Button>
                 <Button className="w-full" variant="outline">Login as Client</Button>
               </div>
+              <div className="pt-4">
+                <h3 className="text-lg font-medium">Cases Solved (Logged In Judge):</h3>
+                <p className="text-green-600 font-semibold">Total: 9,876 cases solved</p>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="video">
+          <Card>
+            <CardContent className="p-4 space-y-4">
+              <h2 className="text-2xl font-semibold">Video Conferencing</h2>
+              <p>If a judge or criminal is unwell or unable to attend physically, they can join the court hearing via video conferencing.</p>
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">Start Video Call</Button>
             </CardContent>
           </Card>
         </TabsContent>
